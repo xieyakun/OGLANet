@@ -6,7 +6,7 @@ resnext_101_32_path = './model/resnet101.pth'
 from torchsummary import summary
 
 
-class GFEM(nn.Module):
+class ConvG(nn.Module):
     def __init__(self,in_dim=256, dim=512,kernel_size=3):
         super().__init__()
         self.in_dim=in_dim
@@ -103,21 +103,21 @@ class OGLA(nn.Module):
         self.layer1 = resnext.layer1  
         self.layer2 = resnext.layer2  
         self.layer3 = resnext.layer3          
-        self.conv1 = GFEM(3, 64) 
+        self.conv1 = ConvG(3, 64) 
         self.pool1 = convZ_pool(64)  
         self.pool1_1 = convZ_pool(64)
         self.pool1_2 = convZ_pool(64)
         self.pool1_3 = convZ_pool(64)        
-        self.conv2 = GFEM(64, 128)
+        self.conv2 = ConvG(64, 128)
         self.pool2 = convZ_pool(128)
         self.pool2_1 = convZ_pool(128)
         self.pool2_2 = convZ_pool(128)        
-        self.conv3 = GFEM(128, 256)
+        self.conv3 = ConvG(128, 256)
         self.pool3 = convZ_pool(256)
         self.pool3_1 = convZ_pool(256)        
-        self.conv4 = GFEM(256, 512) 
+        self.conv4 = ConvG(256, 512) 
         self.pool4 = convZ_pool(512)
-        self.conv5 = GFEM(512, 1024)         
+        self.conv5 = ConvG(512, 1024)         
         self.att3 = LayerConv(960, 512, 1, 1, 0, False)
         self.up6 = nn.ConvTranspose2d(1024, 512, 2, stride=2)  
         self.conv6 = convZ(1024, 512)                               
