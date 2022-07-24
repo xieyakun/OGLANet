@@ -3,7 +3,7 @@ from torch import nn
 
 from ResNet import resnext_101_32x4d_
 
-resnext_101_32_path = './model/resnext_101_32x4d.pth'
+resnext_101_32_path = './model/resnet101.pth'
 
 
 class ResNeXt101(nn.Module):
