@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from ResNet.resnext101_regular import ResNeXt101
 import torch.nn.functional as F
-resnext_101_32_path = './model/resnext_101_32x4d.pth'
+resnext_101_32_path = './model/resnet101.pth'
 from torchsummary import summary
 
 

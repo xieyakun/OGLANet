@@ -2,7 +2,7 @@ import glob
 import os
 from PIL import Image
 import torch.utils.data as data
-resnext_101_32_path = './model/resnext_101_32x4d.pth'
+resnext_101_32_path = './model/resnet101.pth'
 training_root = '../data_shadow/dataset/'
 
 
